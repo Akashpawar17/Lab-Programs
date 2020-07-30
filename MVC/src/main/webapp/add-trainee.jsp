@@ -8,7 +8,8 @@
 </head>
 <body>
 <h2>Trainee added successfully</h2><br>
-${trainee}
+${trainee}<br>
+<a href="add.jsp">add Trainee</a>
 
 
 

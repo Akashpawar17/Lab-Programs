@@ -7,9 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>Trainee Deleted Successfully</h2>
-${trainee}
-<a href="index.jsp">findtrainee</a>
+Trainee Found
 
+<p>${trainee.id}</p>
+<p>${trainee.name}</p>
+<p>${trainee.domian}</p> 
+ <p>${trainee.location}</p>
 </body>
 </html>
