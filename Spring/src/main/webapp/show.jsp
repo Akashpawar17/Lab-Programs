@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+ isELIgnored="false"   pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+<h2>${trainee}</h2>
+<h2>${remove}</h2>
+
+<p>${tranee.id}</p>
+<p>${tranee.name}</p>
+<p>${tranee.domian}</p> 
+ <p>${tranee.location}</p>
 <table border="black">
 <h2>Trainee Management System</h2>
 <div>

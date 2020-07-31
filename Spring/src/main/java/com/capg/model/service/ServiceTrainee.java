@@ -28,9 +28,6 @@ public class ServiceTrainee {
 		return dao.deleteTraine(id);
 	}
 	
-	public Trainee updateTrainee(int id)  {
-		return dao.updateTrainee(id);
-	}
 	
 	
 	

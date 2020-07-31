@@ -1,6 +1,6 @@
 package com.capg.model.controller;
 
-import java.sql.SQLException;
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -45,11 +45,11 @@ public class TraineeController {
 		}
 	}
 	@PostMapping("/add")
-	public String addTrainee(@RequestParam("id") int id,@RequestParam("name") String name,@RequestParam("domain") String domain,@RequestParam("location") String location,Model m) throws SQLException {
+	public String addTrainee(@RequestParam("id") int id,@RequestParam("name") String name,@RequestParam("domain") String domain,@RequestParam("location") String location,Model m)  {
 Trainee trainee=new Trainee(id,name,domain,location);
 service.addTrainee(trainee);
 m.addAttribute("trainee", trainee);
-return "add-trainee";
+return "show";
 
 		
 		
@@ -57,28 +57,33 @@ return "add-trainee";
 	@GetMapping("/find")
 	public String findTrainee(@RequestParam("id") int id,Model m)  {
 		Trainee trainee=service.findTrainee(id);
-		m.addAttribute("trainee",trainee);
-		return "find-trainee";
-		
-	}
-	
-	
-	@DeleteMapping("/remove/{aid}")
-	public String deleteAvatar(@PathVariable int id) {
-		
-		boolean a= service.deleteTrainee(id);
-	
+		m.addAttribute("tranee",trainee);
 		return "show";
 		
 	}
-	@PostMapping("/update")
+	
+	
+@PostMapping("/remove")
+	public String deleteAvatar(@RequestParam("id") int id,Model m) {
+		
+		if( service.deleteTrainee(id)) {
+			return "show";
+		}
+	
+		else {
+			m.addAttribute("remove", "not found");
+			return "null";
+		}
+		
+	}
+	/*@PostMapping("/update")
 	public String updateTrainee(@RequestParam("id") int id,Model m)  {
 		Trainee trainee=new Trainee();
 	service.updateTrainee(id);
 		m.addAttribute("trainee",trainee);
 		return "update-trainee";
 		
-	}
+	}*/
 }
 	
 	

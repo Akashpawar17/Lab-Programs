@@ -9,9 +9,9 @@
 <body>
 Trainee Found
 
-<p>${trainee.id}</p>
-<p>${trainee.name}</p>
-<p>${trainee.domian}</p> 
- <p>${trainee.location}</p>
+<p>${tranee.id}</p>
+<p>${tranee.name}</p>
+<p>${tranee.domian}</p> 
+ <p>${tranee.location}</p>
 </body>
 </html>

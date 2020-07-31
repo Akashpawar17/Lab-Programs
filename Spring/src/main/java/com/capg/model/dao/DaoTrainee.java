@@ -26,31 +26,18 @@ public class DaoTrainee {
 	return t;
 	}
 	public boolean deleteTraine(int id) {
-Trainee t=new Trainee();
-if(map.equals(id)) {
-	map.remove(t);
+
+if(map.containsKey(id)) {
+	map.remove(id);
 
 	return true;
 }
-
-		
-	
-
 	else {
 		return false;
 	}
 }
 	
 	
-	public Trainee updateTrainee(int  id) {
-	Trainee t=new Trainee();
-if(map.equals(id)) {
-	map.put(t.getId(),t);
-
-			return t;
-		}
-		else return null;
-		
-	}
+	
 
 }
