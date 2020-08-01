@@ -11,6 +11,7 @@
 ${traineeid}
 ${message}
 
+
 <form action="show.jsp">
  <input type="submit" value="home">
  </form>
