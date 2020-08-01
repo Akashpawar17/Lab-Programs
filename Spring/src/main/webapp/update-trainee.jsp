@@ -7,10 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-${trainee.id}<br>
-${trainee.name}<br>
-${trainee.domian}<br>
-${trainee.location}
 
+${traineeid}
+${message}
+
+<form action="show.jsp">
+ <input type="submit" value="home">
+ </form>
 </body>
 </html>

@@ -1,11 +1,13 @@
 package com.capg.demo.jpa.service;
 
+import java.rmi.StubNotFoundException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.capg.demo.jpa.exception.StudentDoesNotExistsException;
 import com.capg.demo.jpa.model.Student;
 import com.capg.demo.jpa.repo.StudentJpaRepo;
 
@@ -16,9 +18,9 @@ public class StudentService {
 	//StudnetRepo repo;
 	StudentJpaRepo repo;
 	@Transactional
-	public Student addStudnet(Student s) {
+	public Student addStudnet(Student s) throws StubNotFoundException {
 		if(repo.existsById(s.getStudentId())){
-			throw new RuntimeException("student Exists");
+			throw new StubNotFoundException("student not found");
 		}
 	
 	
@@ -40,10 +42,13 @@ public class StudentService {
 	}
 
 	
-	public Student findById(int studentId) {
-		
+	public Student findById(int studentId) throws StudentDoesNotExistsException {
+		if(!repo.existsById(studentId)) {
+			throw new StudentDoesNotExistsException("please enter a valid id");
+		}
+		else {
 		return repo.getOne(studentId);
-		//return repo.findById(studentId);
+		}//return repo.findById(studentId);
 		
 	}
 	public Student updateStudnet(Student student) {
@@ -53,6 +58,13 @@ public class StudentService {
 		
 		return repo.save(s);
 		
+	}
+	public Student findBystudentName(String studentName) {
+		return repo.findByStudentName(studentName);
+	}
+	
+	public Student findByIdAndFindByName(int studentId,String studentName) {
+		return repo.findByStudentIdAndStudentName(studentId, studentName);
 	}
 	}
 

@@ -8,17 +8,18 @@
 </head>
 <body>
 
-<table class="container">
+
 <h2>Login Page</h2>
 
 <form action="login"  method="post">
+<table border="1|0">
 Enter UserName:<input type="text" name="uname"><br>
 Enter Password:<input type="text" name="password"><br>
 <input type="submit" value="login">
 
-
-</form>
 </table>
+</form>
+
 
 </body>
 </html>

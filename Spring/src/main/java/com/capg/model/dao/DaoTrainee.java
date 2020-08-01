@@ -3,6 +3,7 @@ package com.capg.model.dao;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
@@ -25,19 +26,46 @@ public class DaoTrainee {
 	Trainee t=	map.get(id);
 	return t;
 	}
-	public boolean deleteTraine(int id) {
+	public int  deleteTrainee(int id) {
 
-if(map.containsKey(id)) {
 	map.remove(id);
+	return id;
 
-	return true;
-}
-	else {
-		return false;
+	
+
+	
+	}
+	
+	public List<Trainee> getAllTrainees()
+	{
+	
+		return map.values().stream().collect(Collectors.toList());
+		
+
+	}
+	
+	public Trainee updateTrainee(Trainee t) {
+		
+	
+		if(map.containsKey(t.getId()))
+		{
+		map.replace(t.getId(), t);
+			//System.out.println(map.get(t.getId()));
+			return t;
+			
+		}
+		else
+			return null;
+		
 	}
 }
 	
+
+
+	
+
+	
 	
 	
 
-}
+

@@ -11,6 +11,6 @@
 <form action="remove" method="get">
 Enter Trainee Id:<input type="number" name="id"><br>
 <input type="submit" value="removeTrainee">
-</form> 
-</body>
+
+
 </html>

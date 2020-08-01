@@ -9,10 +9,10 @@
 <body>
 <h2>Update Trainee</h2>
 <form action="update" method="post"> 
-<input type="number" name="id"><br>
-<input type="text" name="name"><br>
-<input type="text" name="domian"><br>
-<input type="text" name="location"><br>
+Trainee Id:<input type="number" name="id"><br>
+Trainee name:<input type="text" name="name"><br>
+Trainee domian:<input type="text" name="domian"><br>
+Trainee loaction:<input type="text" name="location"><br>
 
 
 <input type="submit" value=updateTrainee>
