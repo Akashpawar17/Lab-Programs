@@ -91,12 +91,7 @@ public class TraineeController {
 		}
 	}
 
-	/*@PostMapping("/update")
-	public String modifyTrainee(@RequestParam("id") int id, Model m) {
-		m.addAttribute("trainee", service.findTrainee(id));
-		return "update-trainee";
-	}
-	*/
+	
 	
 	@PostMapping("/update")
 	public String updateTrainee(@ModelAttribute Trainee t, Model m)
@@ -112,7 +107,7 @@ public class TraineeController {
 		else
 		{
 			m.addAttribute("traineeid", t.getId());
-			m.addAttribute("operation", " Not Found");
+			m.addAttribute("message", "  Tarinee NotFound");
 return "update-trainee";
 		}
 	}

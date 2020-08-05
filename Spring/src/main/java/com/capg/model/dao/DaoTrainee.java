@@ -1,5 +1,7 @@
 package com.capg.model.dao;
 
+
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,7 +41,7 @@ public class DaoTrainee {
 	public List<Trainee> getAllTrainees()
 	{
 	
-		return map.values().stream().collect(Collectors.toList());
+		return ((Collection<Trainee>) map).stream().collect(Collectors.toList());
 		
 
 	}
@@ -50,7 +52,7 @@ public class DaoTrainee {
 		if(map.containsKey(t.getId()))
 		{
 		map.replace(t.getId(), t);
-			//System.out.println(map.get(t.getId()));
+			
 			return t;
 			
 		}
