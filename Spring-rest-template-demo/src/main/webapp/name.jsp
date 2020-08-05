@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form action="getStudentByName" method="get">
+<form action="getname" method="get">
 Enter StudentName:<input type="text" name="studentName"><br>
 <input type="submit" value="findByName">
 </form>

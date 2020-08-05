@@ -57,7 +57,7 @@ public class StudentController {
 		
 	}
 	
-	@GetMapping("/getStudentByName")
+	@GetMapping("/getname")
 	public String getStudentByName(@RequestParam("studentName") String studentName,Model m) {
 		
 	Student student=	rest.getForObject("http://localhost:8885/student/"+studentName, Student.class);
