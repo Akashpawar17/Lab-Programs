@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: MovieApiGateway
+server:
+  port: 8444
+  
+zuul:
+  routes:
+    Movie-info:
+      path: /info/**
+      service-id: movie-Info-service
+      strip-prefix: false
+      
+ 
+    Movie-rating:
+      path: /rating/**
+      service-id: movie-rating-service
+      strip-prefix: false
+      
+      
+    Movie-catlog:
+      path: /catlog/**
+      service-id: movie-catlog-service
+      strip-prefix: false
