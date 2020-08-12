@@ -1,10 +1,14 @@
 package com.capg.demo.model;
 
+import java.util.List;
+
 public class Product {
 	
 	private int productId;
 	private String productName;
 	private double productPrice;
+	
+
 	public Product() {
 		
 		// TODO Auto-generated constructor stub

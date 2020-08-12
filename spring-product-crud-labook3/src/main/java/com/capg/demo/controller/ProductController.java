@@ -3,6 +3,7 @@ package com.capg.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import com.capg.demo.model.Product;
 import com.capg.demo.service.ProductService;
 
 @RestController
+@CrossOrigin(origins= {"http://localhost:4200"})
 public class ProductController {
 	
 	
@@ -43,7 +45,7 @@ public class ProductController {
 		return service.updateProduct(p);
 		
 	}
-	@GetMapping("products")
+	@GetMapping("product")
 	public List<Product> getAllProduct(){
 		return service.getAllProduct();
 	}

@@ -20,7 +20,7 @@ public class StudentService {
 	// StudnetRepo repo;
 	StudentJpaRepo repo;
 
-	@Transactional
+	//@Transactional
 	public Student addStudnet(Student s) throws StudentDoesNotExistsException, DateNotFoundException {
 
 		LocalDate date = LocalDate.now();

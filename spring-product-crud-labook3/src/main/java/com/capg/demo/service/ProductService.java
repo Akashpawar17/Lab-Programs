@@ -43,9 +43,9 @@ public class ProductService {
 		if(product==null) {
 			throw new productNotFoundException("product id not found");
 		}
-			p.setProductName(product.getProductName());
-			p.setProductPrice(product.getProductPrice());
-		 return repo.save(p);
+			product.setProductName(p.getProductName());
+			product.setProductPrice(p.getProductPrice());
+		 return repo.save(product);
 	}
 
 	
